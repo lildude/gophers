@@ -4,7 +4,7 @@
 
 {% for image in site.static_files %}
   {% if image.path contains '.png' %}
-    ![]({{ image.path }})
+    ![{{ image.path | remove "/" }}]({{ site.github.url }}{{ image.path }})
   {% endif %}
 {% endfor %}
 
